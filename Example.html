@@ -32,6 +32,8 @@
   <link href="./Agencycss/css(1)" rel="stylesheet" type="text/css">
   <link href="./Agencycss/css(2)" rel="stylesheet" type="text/css">
   <link href="./Agencycss/css(3)" rel="stylesheet" type="text/css">
+  <link href="jquery.gcal_flow.css" rel="stylesheet" type="text/css">
+  
   <link rel="stylesheet" href="css/animations.css" />
 
   <!-- Custom styles for this template -->
@@ -155,13 +157,55 @@
 
     <!-- /.3 thing -->
 
-
+ 
     <!-- Temporary events page 
     figure out calendar integration-->
-    <div class="googleCalendar">
-      <iframe src="https://calendar.google.com/calendar/embed?title=Put%20your%20Title%20here&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York"
-        style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  <div class='container'>
+      <div class='row'>
+    <link href="jquery.gcal_flow.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      _gCalFlow_debug = true;
+    </script>
+    <script type="text/javascript" src="jquery.gcal_flow.js"></script>
+    <script type="text/javascript">
+      var $ = jQuery;
+      $(function() {
+        $('#gcf-simple').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com'
+        });
+        $('#gcf-design').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+          maxitem: 10
+        });
+        $('#gcf-custom-template').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+          maxitem: 50,
+          mode: 'updates',
+          date_formatter: function(d, allday_p) { return (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getYear().toString().substr(-2) }
+        });
+      });
+    </script>
+    <style type="text/css">
+      h2 { clear: both; margin-top: 2em; }
+      #gcf-design .gcf-header-block { background: green; filter: none; }
+      #gcf-design { height: 300px; width: 500px; background: #F0FFEE; filter: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Google Calendar Flow plugin Examples</h1>
+
+<br><br>
+    <h2>Change size and color by CSS and option</h2>
+    <div id="gcf-design">
     </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+  </body>
 
 
 
@@ -337,6 +381,7 @@
     <!-- Plugin JavaScript -->
     <script src="./Agencycss/jquery.easing.min.js.download"></script>
 
+
     <!-- Contact form JavaScript -->
     <script src="./Agencycss/jqBootstrapValidation.js.download"></script>
     <script src="./Agencycss/contact_me.js.download"></script>
@@ -345,8 +390,36 @@
     <script src="./Agencycss/agency.min.js.download"></script>
     <script src="js/css3-animate-it.js"></script>
     <script src="js/contact_me.js"></script>
+     <!-- Calendar  -->
+    <script src="js/jquery.gcal_flow.min.js"></script>
+    <script src="js/jquery.gcal_flow.js"></script>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      _gCalFlow_debug = true;
+    </script>
+    <script type="text/javascript" src="jquery.gcal_flow.js"></script>
+    <script type="text/javascript">
+      var $ = jQuery;
+      $(function() {
+        $('#gcf-simple').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com'
+        });
+        $('#gcf-design').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+          maxitem: 10
+        });
+        $('#gcf-custom-template').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+          maxitem: 50,
+          mode: 'updates',
+          date_formatter: function(d, allday_p) { return (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getYear().toString().substr(-2) }
+        });
+      });
+    </script>
+    <script type="text/javascript" src="jquery.gcal_flow.js"></script>
+    
 
 
 </body>
